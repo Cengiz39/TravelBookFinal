@@ -1,24 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X3P-fS-xJZ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Lokasyonlar:-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TravelBookLast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="center" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Gf-Lz-Cik">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1Gf-Lz-Cik" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="O8i-jB-TjN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Gf-Lz-Cik" secondAttribute="bottom" id="Slv-yB-9Je"/>
+                            <constraint firstItem="1Gf-Lz-Cik" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="eNs-lK-H8R"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Gf-Lz-Cik" secondAttribute="trailing" id="yIi-gD-S6l"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Lokasyonlar:" id="m0H-Ou-AQy"/>
+                    <connections>
+                        <outlet property="tableView" destination="1Gf-Lz-Cik" id="5KK-ez-YRh"/>
+                        <segue destination="af5-MV-qtO" kind="show" identifier="FirstSegue" id="EPl-Vx-mmn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="116.51785714285714"/>
+        </scene>
+        <!--Ekleme Sayfası-->
+        <scene sceneID="Xmy-hz-SCy">
+            <objects>
+                <viewController id="af5-MV-qtO" customClass="SecondViewController" customModule="TravelBookLast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NPk-FU-t8w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HLY-aj-F5n">
+                                <rect key="frame" x="0.0" y="88" width="414" height="727"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhK-ZT-Vzf">
+                                <rect key="frame" x="0.0" y="812" width="414" height="68"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Kaydet"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="af5-MV-qtO" eventType="touchUpInside" id="XgP-Av-1hO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rhK-ZT-Vzf" firstAttribute="top" secondItem="Zmh-eF-JoA" secondAttribute="top" constant="724" id="1DE-Kv-LBl"/>
+                            <constraint firstItem="HLY-aj-F5n" firstAttribute="centerX" secondItem="NPk-FU-t8w" secondAttribute="centerX" id="5HK-Yd-Oei"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="rhK-ZT-Vzf" secondAttribute="bottom" constant="-18" id="KSG-CV-fGH"/>
+                            <constraint firstItem="HLY-aj-F5n" firstAttribute="trailing" secondItem="rhK-ZT-Vzf" secondAttribute="trailing" id="Waa-W5-4jX"/>
+                            <constraint firstItem="HLY-aj-F5n" firstAttribute="leading" secondItem="Zmh-eF-JoA" secondAttribute="leading" id="eUE-9o-AJ9"/>
+                            <constraint firstItem="Zmh-eF-JoA" firstAttribute="bottom" secondItem="HLY-aj-F5n" secondAttribute="bottom" constant="47" id="hJi-3r-59O"/>
+                            <constraint firstItem="HLY-aj-F5n" firstAttribute="top" secondItem="Zmh-eF-JoA" secondAttribute="top" id="yMj-2p-kHP"/>
+                            <constraint firstItem="HLY-aj-F5n" firstAttribute="leading" secondItem="rhK-ZT-Vzf" secondAttribute="leading" id="ymi-ar-odU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zmh-eF-JoA"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ekleme Sayfası" id="ShA-e7-NWx"/>
+                    <connections>
+                        <outlet property="mapView" destination="HLY-aj-F5n" id="BFP-XT-QrA"/>
+                        <outlet property="saveButtonUI" destination="rhK-ZT-Vzf" id="x5h-bw-6EM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k9d-AP-JlR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1818.840579710145" y="116.51785714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ud2-de-6cT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X3P-fS-xJZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J3d-U4-dqP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="faP-ct-fNd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="due-qM-rO0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
         </scene>
     </scenes>
 </document>
